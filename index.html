@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en" data-model="HL-550M" data-finish="silver">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Heliora HL Series | Photovoltaic modules for utility and commercial installations</title>
+    <meta
+      name="description"
+      content="High-efficiency photovoltaic modules for utility and commercial installations. Compare the 450 W, 550 W and 650 W bifacial HL modules and estimate annual yield. Fictional brand, demo project."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f3ec" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#12110e" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Product drawings. All geometry is in millimetres, so every render on the page shares one true scale. -->
+    <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="glass-sheen" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity="0.2" />
+          <stop offset="0.36" stop-color="#fff" stop-opacity="0.04" />
+          <stop offset="0.62" stop-color="#fff" stop-opacity="0" />
+          <stop offset="1" stop-color="#fff" stop-opacity="0.08" />
+        </linearGradient>
+        <linearGradient id="cell-fill" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#1f3f63" />
+          <stop offset="1" stop-color="#11263e" />
+        </linearGradient>
+
+        <pattern id="cells-HL-450M" width="176" height="74" patternUnits="userSpaceOnUse">
+          <rect x="3" y="3" width="170" height="68" fill="url(#cell-fill)" />
+          <path class="m-busbar" d="M35 0V74M70 0V74M106 0V74M141 0V74" />
+        </pattern>
+        <pattern id="cells-HL-550M" width="174" height="90" patternUnits="userSpaceOnUse">
+          <rect x="3" y="3" width="168" height="84" fill="url(#cell-fill)" />
+          <path class="m-busbar" d="M35 0V90M70 0V90M104 0V90M139 0V90" />
+        </pattern>
+        <pattern id="cells-HL-650B" width="202" height="103" patternUnits="userSpaceOnUse">
+          <rect x="4" y="4" width="194" height="95" fill="url(#cell-fill)" />
+          <path class="m-busbar" d="M34 0V103M67 0V103M101 0V103M135 0V103M168 0V103" />
+        </pattern>
+
+        <!-- 144 half-cut cells: 6 strings of 24, two 72-cell halves either side of the centre ribbon. -->
+        <g id="module-HL-450M">
+          <rect class="m-frame" width="1134" height="1903" rx="8" />
+          <rect class="m-backing" x="30" y="30" width="1074" height="1843" />
+          <rect transform="translate(39 48.5)" width="1056" height="888" fill="url(#cells-HL-450M)" />
+          <rect transform="translate(39 966.5)" width="1056" height="888" fill="url(#cells-HL-450M)" />
+          <path class="m-ribbon" d="M39 951.5H1095" />
+          <rect x="30" y="30" width="1074" height="1843" fill="url(#glass-sheen)" />
+        </g>
+        <g id="module-HL-550M">
+          <rect class="m-frame" width="1134" height="2279" rx="8" />
+          <rect class="m-backing" x="35" y="35" width="1064" height="2209" />
+          <rect transform="translate(45 44.5)" width="1044" height="1080" fill="url(#cells-HL-550M)" />
+          <rect transform="translate(45 1154.5)" width="1044" height="1080" fill="url(#cells-HL-550M)" />
+          <path class="m-ribbon" d="M45 1139.5H1089" />
+          <rect x="35" y="35" width="1064" height="2209" fill="url(#glass-sheen)" />
+        </g>
+        <!-- 132 half-cut cells: 6 strings of 22. Glass-glass, so the rear glass shows lighter between cells. -->
+        <g id="module-HL-650B">
+          <rect class="m-frame" width="1303" height="2384" rx="8" />
+          <rect class="m-backing m-backing--bifacial" x="35" y="35" width="1233" height="2314" />
+          <rect transform="translate(45.5 44)" width="1212" height="1133" fill="url(#cells-HL-650B)" />
+          <rect transform="translate(45.5 1207)" width="1212" height="1133" fill="url(#cells-HL-650B)" />
+          <path class="m-ribbon" d="M45.5 1192H1257.5" />
+          <rect x="35" y="35" width="1233" height="2314" fill="url(#glass-sheen)" />
+        </g>
+
+        <g id="drawing-HL-450M">
+          <use href="#module-HL-450M" />
+          <path class="dim-line" d="M0 -90H1134M0 -125V-55M1134 -125V-55M-90 0V1903M-125 0H-55M-125 1903H-55" />
+          <text class="dim-label" x="567" y="-122" text-anchor="middle">1134 mm</text>
+          <text class="dim-label" transform="translate(-122 951.5) rotate(-90)" text-anchor="middle">1903 mm</text>
+        </g>
+        <g id="drawing-HL-550M">
+          <use href="#module-HL-550M" />
+          <path class="dim-line" d="M0 -90H1134M0 -125V-55M1134 -125V-55M-90 0V2279M-125 0H-55M-125 2279H-55" />
+          <text class="dim-label" x="567" y="-122" text-anchor="middle">1134 mm</text>
+          <text class="dim-label" transform="translate(-122 1139.5) rotate(-90)" text-anchor="middle">2279 mm</text>
+        </g>
+        <g id="drawing-HL-650B">
+          <use href="#module-HL-650B" />
+          <path class="dim-line" d="M0 -90H1303M0 -125V-55M1303 -125V-55M-90 0V2384M-125 0H-55M-125 2384H-55" />
+          <text class="dim-label" x="651.5" y="-122" text-anchor="middle">1303 mm</text>
+          <text class="dim-label" transform="translate(-122 1192) rotate(-90)" text-anchor="middle">2384 mm</text>
+        </g>
+      </defs>
+    </svg>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="wordmark" href="#main" aria-label="Heliora, go to start of page">
+          <svg viewBox="0 0 98 28" width="98" height="28" aria-hidden="true" focusable="false">
+            <rect class="wordmark__mark" y="4" width="5" height="20" />
+            <text class="wordmark__text" x="13" y="22" textLength="84" lengthAdjust="spacing">Heliora</text>
+          </svg>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#specifications">Specifications</a></li>
+            <li><a href="#yield">Yield</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch colour theme">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+            <circle class="icon-line" cx="12" cy="12" r="4" />
+            <path class="icon-line" d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__grid">
+          <div class="hero__intro">
+            <h1 class="hero__title" id="hero-title">Heliora HL&nbsp;Series</h1>
+            <p class="hero__lede">High-efficiency photovoltaic modules for utility and commercial installations.</p>
+            <div class="hero__actions">
+              <a class="btn btn--secondary" href="#specifications">View specifications</a>
+              <a class="btn btn--primary" href="#contact">Request a quote</a>
+            </div>
+          </div>
+          <figure class="stage hero__stage">
+            <div class="stage__renders">
+              <svg class="render" data-render="HL-450M" viewBox="-240 -200 1783 2640" role="img" aria-label="Drawing of the Heliora HL-450M module, 1903 by 1134 millimetres">
+                <use href="#drawing-HL-450M" x="84.5" y="481" />
+              </svg>
+              <svg class="render" data-render="HL-550M" viewBox="-240 -200 1783 2640" role="img" aria-label="Drawing of the Heliora HL-550M module, 2279 by 1134 millimetres">
+                <use href="#drawing-HL-550M" x="84.5" y="105" />
+              </svg>
+              <svg class="render" data-render="HL-650B" viewBox="-240 -200 1783 2640" role="img" aria-label="Drawing of the Heliora HL-650B module, 2384 by 1303 millimetres">
+                <use href="#drawing-HL-650B" />
+              </svg>
+            </div>
+            <figcaption class="stage__caption">
+              <span data-field="name">Heliora HL-550M</span>
+              <span data-field="finish">Silver frame</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="container">
+          <dl class="key-figures">
+            <div>
+              <dt>Rated power</dt>
+              <dd>450–650 W</dd>
+            </div>
+            <div>
+              <dt>Module efficiency</dt>
+              <dd>up to 21.3 %</dd>
+            </div>
+            <div>
+              <dt>Max system voltage</dt>
+              <dd>1500 V DC</dd>
+            </div>
+            <div>
+              <dt>Performance warranty</dt>
+              <dd>30 years</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="benefits" aria-label="Key benefits">
+        <div class="container benefits__grid">
+          <article class="benefit">
+            <svg class="benefit__icon" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" focusable="false">
+              <path class="icon-line" d="M4 26 24 9l20 17" />
+              <path class="icon-line" d="M9 22v19h30V22" />
+              <path class="icon-line icon-line--accent" d="M16 34l5-8h13l-5 8zM22.5 34l5-8" />
+            </svg>
+            <h2 class="benefit__title">Built for 30 years on a roof</h2>
+            <p>PID-resistant cells, IP68 junction box, 5400 Pa snow and 2400 Pa wind load rating.</p>
+          </article>
+          <article class="benefit">
+            <svg class="benefit__icon" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" focusable="false">
+              <circle class="icon-line icon-line--accent" cx="35" cy="13" r="5" />
+              <path class="icon-line icon-line--accent" d="M35 3v2.500M35 20.500V23M25 13h2.500M42.5 13H45M28 6l1.8 1.800M40.2 18.2 42 20M28 20l1.8-1.800M40.2 7.8 42 6" />
+              <path class="icon-line" d="M5 43h38M9 43V31h7v12M21 43V24h7v19" />
+            </svg>
+            <h2 class="benefit__title">More kWh per installed watt</h2>
+            <p>Half-cut cell architecture and low temperature coefficient keep output high on hot afternoons when flat-plate modules fade.</p>
+          </article>
+          <article class="benefit">
+            <svg class="benefit__icon" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" focusable="false">
+              <path class="icon-line" d="M4 17h40v14H4z" />
+              <circle class="icon-line icon-line--accent" cx="13" cy="24" r="3" />
+              <circle class="icon-line icon-line--accent" cx="35" cy="24" r="3" />
+              <path class="icon-line" d="M13 17V8M35 17V8M9 8h8M31 8h8M13 31v9M35 31v9M9 40h8M31 40h8" />
+            </svg>
+            <h2 class="benefit__title">Designed for fast installation</h2>
+            <p>Standard mounting hole pattern, 1500 V string compatibility, factory-matched current binning.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="products" aria-labelledby="products-title">
+        <div class="container products">
+          <div class="products__view">
+            <h2 class="section__title" id="products-title">Choose a module</h2>
+            <figure class="stage products__stage">
+              <div class="stage__renders">
+                <svg class="render" data-render="HL-450M" viewBox="-240 -200 1783 2640" role="img" aria-label="Drawing of the Heliora HL-450M module, 1903 by 1134 millimetres">
+                  <use href="#drawing-HL-450M" x="84.5" y="481" />
+                </svg>
+                <svg class="render" data-render="HL-550M" viewBox="-240 -200 1783 2640" role="img" aria-label="Drawing of the Heliora HL-550M module, 2279 by 1134 millimetres">
+                  <use href="#drawing-HL-550M" x="84.5" y="105" />
+                </svg>
+                <svg class="render" data-render="HL-650B" viewBox="-240 -200 1783 2640" role="img" aria-label="Drawing of the Heliora HL-650B module, 2384 by 1303 millimetres">
+                  <use href="#drawing-HL-650B" />
+                </svg>
+              </div>
+              <figcaption class="stage__caption">
+                <span>Modules drawn to one scale</span>
+                <span data-field="finish">Silver frame</span>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="products__controls">
+            <fieldset class="variant-picker">
+              <legend class="visually-hidden">Module</legend>
+              <label class="variant-card">
+                <input class="visually-hidden" type="radio" name="model" value="HL-450M" />
+                <svg class="variant-card__render" viewBox="0 0 1303 2384" aria-hidden="true" focusable="false">
+                  <use href="#module-HL-450M" x="84.5" y="481" />
+                </svg>
+                <span class="variant-card__name">Heliora HL-450M</span>
+                <span class="variant-card__tagline">Compact commercial module</span>
+              </label>
+              <label class="variant-card">
+                <input class="visually-hidden" type="radio" name="model" value="HL-550M" checked />
+                <svg class="variant-card__render" viewBox="0 0 1303 2384" aria-hidden="true" focusable="false">
+                  <use href="#module-HL-550M" x="84.5" y="105" />
+                </svg>
+                <span class="variant-card__name">Heliora HL-550M</span>
+                <span class="variant-card__tagline">Balanced utility workhorse</span>
+              </label>
+              <label class="variant-card">
+                <input class="visually-hidden" type="radio" name="model" value="HL-650B" />
+                <svg class="variant-card__render" viewBox="0 0 1303 2384" aria-hidden="true" focusable="false">
+                  <use href="#module-HL-650B" />
+                </svg>
+                <span class="variant-card__name">Heliora HL-650B</span>
+                <span class="variant-card__tagline">High-output bifacial</span>
+              </label>
+            </fieldset>
+
+            <fieldset class="segmented">
+              <legend class="segmented__legend">Frame finish</legend>
+              <div class="segmented__options">
+                <label class="segmented__option">
+                  <input class="visually-hidden" type="radio" name="finish" value="silver" checked />
+                  <span class="segmented__swatch segmented__swatch--silver"></span>
+                  <span>Silver</span>
+                </label>
+                <label class="segmented__option">
+                  <input class="visually-hidden" type="radio" name="finish" value="black" />
+                  <span class="segmented__swatch segmented__swatch--black"></span>
+                  <span>Black</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="headline" aria-live="polite">
+              <p class="headline__name">
+                <span class="headline__model" data-field="name">Heliora HL-550M</span>
+                <span class="headline__tagline" data-field="tagline">Balanced utility workhorse</span>
+              </p>
+              <dl class="headline__specs">
+                <div>
+                  <dt>Rated power</dt>
+                  <dd data-field="power">550 W</dd>
+                </div>
+                <div>
+                  <dt>Module efficiency</dt>
+                  <dd data-field="efficiency">21.3 %</dd>
+                </div>
+                <div>
+                  <dt>Dimensions</dt>
+                  <dd data-field="dimensions">2279 × 1134 × 35 mm</dd>
+                </div>
+                <div>
+                  <dt>Weight</dt>
+                  <dd data-field="weight">27.5 kg</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="specifications" aria-labelledby="specifications-title">
+        <div class="container split">
+          <div class="split__aside">
+            <h2 class="section__title" id="specifications-title">Specifications</h2>
+            <label class="switch">
+              <input class="switch__input" type="checkbox" role="switch" id="compare-toggle" />
+              <span class="switch__track"></span>
+              <span>Compare all three</span>
+            </label>
+          </div>
+          <div class="table-scroll" id="spec-table-region" role="region" aria-labelledby="specifications-title" tabindex="0">
+            <table class="spec-table" id="spec-table">
+              <caption class="visually-hidden">Full specification for the selected module</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Parameter</th>
+                  <th scope="col">Heliora HL-550M</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Rated power</th><td>550 W</td></tr>
+                <tr><th scope="row">Module efficiency</th><td>21.3 %</td></tr>
+                <tr><th scope="row">Cell type</th><td>144 half-cut monocrystalline</td></tr>
+                <tr><th scope="row">Dimensions</th><td>2279 × 1134 × 35 mm</td></tr>
+                <tr><th scope="row">Weight</th><td>27.5 kg</td></tr>
+                <tr><th scope="row">Voc</th><td>49.9 V</td></tr>
+                <tr><th scope="row">Imp</th><td>13.2 A</td></tr>
+                <tr><th scope="row">Max system voltage</th><td>1500 V DC</td></tr>
+                <tr><th scope="row">Temp. coefficient (Pmax)</th><td>−0.33 %/°C</td></tr>
+                <tr><th scope="row">Operating temp.</th><td>−40 °C to +85 °C</td></tr>
+                <tr><th scope="row">Frame</th><td>Anodised aluminium, 35 mm</td></tr>
+                <tr><th scope="row">Bifacial gain</th><td>—</td></tr>
+                <tr><th scope="row">Product warranty</th><td>15 years</td></tr>
+                <tr><th scope="row">Performance warranty</th><td>30 years (87.4 %)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="yield" aria-labelledby="yield-title">
+        <div class="container split">
+          <div class="split__aside">
+            <h2 class="section__title" id="yield-title">Yield estimate</h2>
+            <form class="yield-form" id="yield-form">
+              <div class="field">
+                <label for="yield-location">Location</label>
+                <select id="yield-location" name="location">
+                  <option value="tehran" selected>Tehran</option>
+                  <option value="yazd">Yazd</option>
+                  <option value="tabriz">Tabriz</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="yield-modules">Number of modules <span class="field__hint">1–1000</span></label>
+                <input id="yield-modules" name="modules" type="number" inputmode="numeric" min="1" max="1000" step="1" value="100" aria-describedby="yield-modules-error" />
+                <p class="field__error" id="yield-modules-error" hidden></p>
+              </div>
+              <label class="check">
+                <input type="checkbox" id="yield-tilt" name="tilt" />
+                <span>Tilt-adjust for site latitude</span>
+              </label>
+              <p class="yield-form__module">Calculated for <strong data-field="name">Heliora HL-550M</strong></p>
+            </form>
+          </div>
+
+          <div class="yield-output">
+            <dl class="yield-output__totals" aria-live="polite">
+              <div>
+                <dt>Annual yield</dt>
+                <dd><span id="yield-annual">88,950</span> kWh</dd>
+              </div>
+              <div>
+                <dt>CO₂ offset estimate</dt>
+                <dd><span id="yield-co2">44.5</span> t/year</dd>
+              </div>
+            </dl>
+            <figure class="chart">
+              <figcaption class="chart__title">Monthly yield, kWh</figcaption>
+              <svg class="chart__svg" id="yield-chart" viewBox="0 0 640 256" aria-hidden="true" focusable="false">
+                <path class="chart__grid" d="M44 16H640M44 85.300H640M44 154.700H640" />
+                <text class="chart__label" x="36" y="20" text-anchor="end">12k</text>
+                <text class="chart__label" x="36" y="89.3" text-anchor="end">8k</text>
+                <text class="chart__label" x="36" y="158.7" text-anchor="end">4k</text>
+                <text class="chart__label" x="36" y="228" text-anchor="end">0</text>
+                <g id="yield-chart-bars">
+                  <path class="chart__bar" d="M53.5 224V141.9q0-3 3-3h24q3 0 3 3V224z"><title>Jan: 4,910 kWh</title></path>
+                  <path class="chart__bar" d="M102.5 224V133q0-3 3-3h24q3 0 3 3V224z"><title>Feb: 5,421 kWh</title></path>
+                  <path class="chart__bar" d="M151.5 224V106.4q0-3 3-3h24q3 0 3 3V224z"><title>Mar: 6,956 kWh</title></path>
+                  <path class="chart__bar" d="M200.5 224V94.3q0-3 3-3h24q3 0 3 3V224z"><title>Apr: 7,656 kWh</title></path>
+                  <path class="chart__bar" d="M249.5 224V63.9q0-3 3-3h24q3 0 3 3V224z"><title>May: 9,412 kWh</title></path>
+                  <path class="chart__bar" d="M298.5 224V53.1q0-3 3-3h24q3 0 3 3V224z"><title>Jun: 10,032 kWh</title></path>
+                  <path class="chart__bar" d="M347.5 224V52q0-3 3-3h24q3 0 3 3V224z"><title>Jul: 10,094 kWh</title></path>
+                  <path class="chart__bar" d="M396.5 224V59.100q0-3 3-3h24q3 0 3 3V224z"><title>Aug: 9,684 kWh</title></path>
+                  <path class="chart__bar" d="M445.5 224V80.600q0-3 3-3h24q3 0 3 3V224z"><title>Sep: 8,448 kWh</title></path>
+                  <path class="chart__bar" d="M494.5 224V108.800q0-3 3-3h24q3 0 3 3V224z"><title>Oct: 6,820 kWh</title></path>
+                  <path class="chart__bar" d="M543.5 224V140.100q0-3 3-3h24q3 0 3 3V224z"><title>Nov: 5,016 kWh</title></path>
+                  <path class="chart__bar" d="M592.5 224V149q0-3 3-3h24q3 0 3 3V224z"><title>Dec: 4,501 kWh</title></path>
+                </g>
+                <text class="chart__peak" id="yield-chart-peak" x="362.5" y="41" text-anchor="middle">10,094</text>
+                <path class="chart__baseline" d="M44 224H640" />
+                <text class="chart__label" x="68.5" y="246" text-anchor="middle">Jan</text>
+                <text class="chart__label" x="117.5" y="246" text-anchor="middle">Feb</text>
+                <text class="chart__label" x="166.5" y="246" text-anchor="middle">Mar</text>
+                <text class="chart__label" x="215.5" y="246" text-anchor="middle">Apr</text>
+                <text class="chart__label" x="264.5" y="246" text-anchor="middle">May</text>
+                <text class="chart__label" x="313.5" y="246" text-anchor="middle">Jun</text>
+                <text class="chart__label" x="362.5" y="246" text-anchor="middle">Jul</text>
+                <text class="chart__label" x="411.5" y="246" text-anchor="middle">Aug</text>
+                <text class="chart__label" x="460.5" y="246" text-anchor="middle">Sep</text>
+                <text class="chart__label" x="509.5" y="246" text-anchor="middle">Oct</text>
+                <text class="chart__label" x="558.5" y="246" text-anchor="middle">Nov</text>
+                <text class="chart__label" x="607.5" y="246" text-anchor="middle">Dec</text>
+              </svg>
+              <table class="visually-hidden">
+                <caption>Monthly yield</caption>
+                <thead>
+                  <tr><th scope="col">Month</th><th scope="col">Yield</th></tr>
+                </thead>
+                <tbody id="yield-table-body">
+                  <tr><th scope="row">Jan</th><td>4,910 kWh</td></tr>
+                  <tr><th scope="row">Feb</th><td>5,421 kWh</td></tr>
+                  <tr><th scope="row">Mar</th><td>6,956 kWh</td></tr>
+                  <tr><th scope="row">Apr</th><td>7,656 kWh</td></tr>
+                  <tr><th scope="row">May</th><td>9,412 kWh</td></tr>
+                  <tr><th scope="row">Jun</th><td>10,032 kWh</td></tr>
+                  <tr><th scope="row">Jul</th><td>10,094 kWh</td></tr>
+                  <tr><th scope="row">Aug</th><td>9,684 kWh</td></tr>
+                  <tr><th scope="row">Sep</th><td>8,448 kWh</td></tr>
+                  <tr><th scope="row">Oct</th><td>6,820 kWh</td></tr>
+                  <tr><th scope="row">Nov</th><td>5,016 kWh</td></tr>
+                  <tr><th scope="row">Dec</th><td>4,501 kWh</td></tr>
+                </tbody>
+              </table>
+            </figure>
+            <p class="yield-output__note">System derate 0.80 (inverter, soiling, wiring and temperature losses). Bifacial modules ×1.08. Tilt adjustment ×1.05 and CO₂ at 0.5 kg per kWh are illustrative assumptions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="downloads" aria-labelledby="downloads-title">
+        <div class="container split">
+          <div class="split__aside">
+            <h2 class="section__title" id="downloads-title">Downloads</h2>
+          </div>
+          <div class="download">
+            <div>
+              <p class="download__name"><span data-field="name">Heliora HL-550M</span> datasheet</p>
+              <p class="download__meta">Plain-text file generated in your browser. This demo does not produce a PDF.</p>
+            </div>
+            <button class="btn btn--secondary" type="button" id="datasheet-download">Datasheet (.txt)</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="container split">
+          <div class="split__aside">
+            <h2 class="section__title" id="contact-title">Request a quote</h2>
+            <p class="section__note">Demo project. This form checks your entries and shows a confirmation, but sends nothing anywhere.</p>
+          </div>
+          <div>
+            <form class="quote-form" id="quote-form" novalidate>
+              <div class="field">
+                <label for="quote-name">Name</label>
+                <input id="quote-name" name="name" type="text" autocomplete="name" maxlength="100" required aria-describedby="quote-name-error" />
+                <p class="field__error" id="quote-name-error" hidden></p>
+              </div>
+              <div class="field">
+                <label for="quote-company">Company</label>
+                <input id="quote-company" name="company" type="text" autocomplete="organization" maxlength="100" required aria-describedby="quote-company-error" />
+                <p class="field__error" id="quote-company-error" hidden></p>
+              </div>
+              <div class="field field--wide">
+                <label for="quote-email">Email</label>
+                <input id="quote-email" name="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="quote-email-error" />
+                <p class="field__error" id="quote-email-error" hidden></p>
+              </div>
+              <div class="field">
+                <label for="quote-module">Module</label>
+                <select id="quote-module" name="module">
+                  <option value="HL-450M">Heliora HL-450M</option>
+                  <option value="HL-550M" selected>Heliora HL-550M</option>
+                  <option value="HL-650B">Heliora HL-650B</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="quote-quantity">Quantity</label>
+                <input id="quote-quantity" name="quantity" type="number" inputmode="numeric" min="1" step="1" required aria-describedby="quote-quantity-error" />
+                <p class="field__error" id="quote-quantity-error" hidden></p>
+              </div>
+              <div class="field field--wide">
+                <label for="quote-message">Message <span class="field__hint">Optional</span></label>
+                <textarea id="quote-message" name="message" rows="5" maxlength="2000" aria-describedby="quote-message-error"></textarea>
+                <p class="field__error" id="quote-message-error" hidden></p>
+              </div>
+              <div class="field--wide">
+                <button class="btn btn--primary" type="submit">Request a quote</button>
+              </div>
+            </form>
+            <div class="form-success" id="quote-success" tabindex="-1" hidden>
+              <h3 class="form-success__title">Request recorded in this tab</h3>
+              <p>Your entries passed validation. As this is a demo, nothing was sent and no one will reply.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__grid">
+        <div>
+          <p class="site-footer__brand">Heliora Photovoltaics</p>
+          <p>Fictional manufacturer. 1 Example Industrial Park, Fictional City.</p>
+        </div>
+        <div>
+          <p class="site-footer__heading">Demo project</p>
+          <p>Heliora is a fictional brand. All specifications are fictional and nothing is copied from a real manufacturer.</p>
+        </div>
+        <div>
+          <p class="site-footer__heading">Source</p>
+          <p><a href="https://github.com/skaveh0" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
