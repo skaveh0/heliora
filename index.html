@@ -13,6 +13,7 @@
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#12110e" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="/src/styles/main.css" />
+    <script src="/theme-init.js"></script>
     <script type="module" src="/src/main.ts"></script>
   </head>
   <body>
@@ -110,7 +111,10 @@
           </ul>
         </nav>
         <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch colour theme">
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+            <path class="icon-line" d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" />
+          </svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
             <circle class="icon-line" cx="12" cy="12" r="4" />
             <path class="icon-line" d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1" />
           </svg>
@@ -377,11 +381,11 @@
             </dl>
             <figure class="chart">
               <figcaption class="chart__title">Monthly yield, kWh</figcaption>
-              <svg class="chart__svg" id="yield-chart" viewBox="0 0 640 256" aria-hidden="true" focusable="false">
+              <svg class="chart__svg" id="yield-chart" viewBox="0 -12 640 268" aria-hidden="true" focusable="false">
                 <path class="chart__grid" d="M44 16H640M44 85.300H640M44 154.700H640" />
-                <text class="chart__label" x="36" y="20" text-anchor="end">12k</text>
-                <text class="chart__label" x="36" y="89.3" text-anchor="end">8k</text>
-                <text class="chart__label" x="36" y="158.7" text-anchor="end">4k</text>
+                <text class="chart__label" data-tick x="36" y="158.7" text-anchor="end">4k</text>
+                <text class="chart__label" data-tick x="36" y="89.3" text-anchor="end">8k</text>
+                <text class="chart__label" data-tick x="36" y="20" text-anchor="end">12k</text>
                 <text class="chart__label" x="36" y="228" text-anchor="end">0</text>
                 <g id="yield-chart-bars">
                   <path class="chart__bar" d="M53.5 224V141.9q0-3 3-3h24q3 0 3 3V224z"><title>Jan: 4,910 kWh</title></path>
@@ -478,11 +482,12 @@
               </div>
               <div class="field">
                 <label for="quote-module">Module</label>
-                <select id="quote-module" name="module">
+                <select id="quote-module" name="module" aria-describedby="quote-module-error">
                   <option value="HL-450M">Heliora HL-450M</option>
                   <option value="HL-550M" selected>Heliora HL-550M</option>
                   <option value="HL-650B">Heliora HL-650B</option>
                 </select>
+                <p class="field__error" id="quote-module-error" hidden></p>
               </div>
               <div class="field">
                 <label for="quote-quantity">Quantity</label>
@@ -499,8 +504,10 @@
               </div>
             </form>
             <div class="form-success" id="quote-success" tabindex="-1" hidden>
-              <h3 class="form-success__title">Request recorded in this tab</h3>
+              <h3 class="form-success__title">Request checked, not sent</h3>
+              <p class="form-success__summary" id="quote-success-summary"></p>
               <p>Your entries passed validation. As this is a demo, nothing was sent and no one will reply.</p>
+              <button class="btn btn--secondary form-success__action" type="button" id="quote-reset">Start another request</button>
             </div>
           </div>
         </div>

@@ -108,6 +108,11 @@ main:focus {
   padding-inline: var(--gutter);
 }
 
+/* A shared link should open on its own selection, not crossfade there from the default. */
+:root:not([data-ready]) * {
+  transition: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
