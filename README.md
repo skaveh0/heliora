@@ -6,9 +6,27 @@ A single-page product site for Heliora, a fictional solar panel manufacturer, bu
 
 **Live demo:** <https://skaveh0.github.io/heliora/>
 
-**Screenshot:** _add after the first deploy_
+![Heliora HL Series hero section with a to-scale drawing of the HL-550M module](docs/hero.png)
 
 > **This is a demo project.** Heliora is a fictional brand and all specifications are fictional. Nothing is copied from a real manufacturer. The quote form validates your entries and shows a confirmation, but it sends nothing anywhere.
+
+## Screenshots
+
+**Module selector, dark theme, with the HL-650B and black frame selected**
+
+![Module selector showing three module cards, a frame finish toggle and headline specifications in the dark theme](docs/module-selector-dark.png)
+
+**Side-by-side specification comparison**
+
+![Specification table comparing the HL-450M, HL-550M and HL-650B](docs/specifications.png)
+
+**Yield calculator with its hand-written SVG chart**
+
+![Yield calculator showing annual kWh, a CO₂ estimate and a monthly bar chart](docs/yield-calculator.png)
+
+**Phone layout**
+
+<img src="docs/phone.png" alt="Hero section on a phone, with the navigation, headline and module drawing stacked in one column" width="320">
 
 ## Why these choices
 
