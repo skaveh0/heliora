@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en" data-model="HL-550M" data-finish="silver">
   <head>
+    <!-- Heliora HL Series. Author: Soroush Kaveh, 2026. Source: https://github.com/skaveh0/heliora -->
     <meta charset="utf-8" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; form-action 'none'; base-uri 'none'"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-ySThJkFwTCSFjQGrmNtSl0ofmPwJktK5gaFegge4UXI='; form-action 'none'; base-uri 'none'"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Heliora HL Series | Photovoltaic modules for utility and commercial installations</title>
@@ -12,12 +13,17 @@
       name="description"
       content="High-efficiency photovoltaic modules for utility and commercial installations. Compare the 450 W, 550 W and 650 W bifacial HL modules and estimate annual yield. Fictional brand, demo project."
     />
+    <meta name="author" content="Soroush Kaveh" />
     <link rel="canonical" href="https://skaveh0.github.io/heliora/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Heliora" />
     <meta property="og:title" content="Heliora HL Series" />
     <meta property="og:description" content="High-efficiency photovoltaic modules for utility and commercial installations. Fictional brand, demo project." />
     <meta property="og:url" content="https://skaveh0.github.io/heliora/" />
+    <meta property="og:author" content="Soroush Kaveh" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="Soroush Kaveh" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Heliora HL Series product page","description":"Portfolio demo: a single-page product site for Heliora, a fictional solar panel manufacturer.","url":"https://skaveh0.github.io/heliora/","creator":{"@type":"Person","name":"Soroush Kaveh","url":"https://github.com/skaveh0"}}</script>
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f3ec" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#12110e" />
@@ -522,6 +528,30 @@
           </div>
         </div>
       </section>
+
+      <section class="colophon" aria-labelledby="colophon-title">
+        <div class="container">
+          <details class="colophon__details">
+            <summary class="colophon__summary" id="colophon-title">About this build</summary>
+            <div class="split colophon__body">
+              <p class="colophon__note">The page has one screen and very little state, so a framework would add more code than it saves. The selected module and finish live in the URL: a control or back/forward navigation updates one store, each part of the page renders from it, and the address stays shareable.</p>
+              <div class="table-scroll" role="region" aria-labelledby="colophon-title" tabindex="0">
+                <table class="spec-table">
+                  <caption class="visually-hidden">How this page was built</caption>
+                  <tbody>
+                    <tr><th scope="row">Stack</th><td>TypeScript (strict), Vite, zero production dependencies</td></tr>
+                    <tr><th scope="row">Graphics</th><td>Hand-written SVG renders and chart, no image assets, no chart library</td></tr>
+                    <tr><th scope="row">Tests</th><td>53 unit tests</td></tr>
+                    <tr><th scope="row">Security</th><td>Strict Content Security Policy</td></tr>
+                    <tr><th scope="row">Lighthouse</th><td>100 / 100 / 100 / 100</td></tr>
+                    <tr><th scope="row">Build date</th><td><time datetime="__BUILD_ISO__">__BUILD_DATE__</time></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -534,9 +564,11 @@
           <p class="site-footer__heading">Demo project</p>
           <p>Heliora is a fictional brand. All specifications are fictional and nothing is copied from a real manufacturer.</p>
         </div>
-        <div>
-          <p class="site-footer__heading">Source</p>
-          <p><a href="https://github.com/skaveh0" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+      </div>
+      <div class="container">
+        <div class="site-footer__credit">
+          <p>Designed and built by <a href="https://github.com/skaveh0" target="_blank" rel="noopener noreferrer">Soroush Kaveh</a></p>
+          <p><a href="https://github.com/skaveh0/heliora" target="_blank" rel="noopener noreferrer">View source</a></p>
         </div>
       </div>
     </footer>
