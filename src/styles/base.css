@@ -124,3 +124,44 @@ main:focus {
     transition: none !important;
   }
 }
+
+/* Forced colours drop backgrounds and shadows, so selected states need a cue that survives. */
+@media (forced-colors: active) {
+  .variant-card:has(:checked),
+  .segmented__option:has(:checked) {
+    outline: 3px solid Highlight;
+    outline-offset: -3px;
+  }
+
+  /* The switch is drawn with backgrounds, so it opts out and uses system colours explicitly. */
+  .switch__track,
+  .switch__track::after {
+    forced-color-adjust: none;
+  }
+
+  .switch__track {
+    background: Canvas;
+    border-color: CanvasText;
+  }
+
+  .switch__track::after {
+    background: CanvasText;
+  }
+
+  .switch__input:checked + .switch__track {
+    background: Highlight;
+    border-color: Highlight;
+  }
+
+  .switch__input:checked + .switch__track::after {
+    background: HighlightText;
+  }
+
+  .spec-table .is-selected {
+    border-left: 2px solid Highlight;
+  }
+
+  .segmented__swatch {
+    forced-color-adjust: none;
+  }
+}
