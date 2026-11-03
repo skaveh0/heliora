@@ -1,0 +1,52 @@
+:root {
+  color-scheme: light dark;
+
+  --paper: light-dark(#f6f3ec, #12110e);
+  --surface: light-dark(#fcfaf5, #1a1815);
+  --stage: light-dark(#e8e4da, #211f1a);
+  --ink: light-dark(#16150f, #f2eee4);
+  --muted: light-dark(#5a564c, #aba599);
+  --rule: light-dark(#d8d3c7, #312e28);
+  --rule-strong: light-dark(#8f897c, #6b665b);
+  --accent: light-dark(#b04f00, #f0a030);
+  --on-accent: light-dark(#ffffff, #17130b);
+  --error: light-dark(#a3231a, #ff9f92);
+
+  --band: #16150f;
+  --on-band: #f2eee4;
+  --on-band-muted: #b5afa2;
+
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-figure: clamp(1.625rem, 1.1rem + 1.6vw, 2.5rem);
+  --text-title: clamp(2rem, 1.3rem + 2.6vw, 3.5rem);
+  --text-display: clamp(3.25rem, 1.6rem + 7vw, 7.5rem);
+
+  --page: 1560px;
+  --gutter: clamp(16px, 4vw, 56px);
+  --section-y: clamp(56px, 7vw, 112px);
+  --gap: clamp(24px, 3vw, 48px);
+  --radius: 2px;
+  --ease: 200ms ease;
+
+  /* Physical product colours: the same in both themes. */
+  --frame: #c6c9c9;
+  --frame-edge: #868a8b;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+:root[data-finish='black'] {
+  --frame: #17181a;
+  --frame-edge: #55585b;
+}
