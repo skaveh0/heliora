@@ -94,6 +94,8 @@ loads from another origin.
 - Production dependencies: none. Dev dependencies: `vite`, `typescript`, `vitest` only.
 - `package-lock.json` is committed.
 - `.github/dependabot.yml` covers npm and GitHub Actions.
+- GitHub Actions are pinned to commit SHAs, and the workflow's token defaults to read-only. Only the deploy
+  job can write to Pages.
 - No CDN scripts. If that ever changes, Subresource Integrity is mandatory.
 
 ### 8. Headers
@@ -156,4 +158,3 @@ Permissions-Policy: camera=(), microphone=(), geolocation=()
 
 - Add `require-trusted-types-for 'script'` to the CSP.
 - Use CSP reporting to catch violations in the field.
-- Pin GitHub Actions to commit SHAs.
