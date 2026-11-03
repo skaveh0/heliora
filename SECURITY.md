@@ -18,7 +18,7 @@ Reviewed against the production build served by `vite preview`, in Chrome.
 | 5 | `localStorage` | Pass |
 | 6 | External links | Pass |
 | 7 | Supply chain | Pass |
-| 8 | HTTP headers | Not possible on GitHub Pages (see Residual risks) |
+| 8 | HTTP headers | Custom headers not possible on GitHub Pages (see Residual risks) |
 | 9 | Repo hygiene | Pass |
 
 ## What was checked
@@ -100,8 +100,10 @@ loads from another origin.
 
 ### 8. Headers
 
-GitHub Pages cannot set custom HTTP headers, which is why the CSP is delivered by meta tag. See
-"What a production deployment would add".
+GitHub Pages cannot set custom HTTP headers, which is why the CSP is delivered by meta tag. Checked on the
+live site: GitHub Pages sends `Strict-Transport-Security`, but not `Content-Security-Policy`,
+`X-Content-Type-Options`, `Referrer-Policy` or `X-Frame-Options`. See "What a production deployment would
+add".
 
 ### 9. Repo hygiene
 
@@ -127,7 +129,7 @@ It was removed from the meta tag and moved to the production header list below. 
 | Risk | Severity here | Why it is accepted |
 |---|---|---|
 | The page can be framed by another site. GitHub Pages can set neither `frame-ancestors` nor `X-Frame-Options`. | Low | There is no login, session or sensitive action to hijack. |
-| No HSTS, `X-Content-Type-Options` or `Referrer-Policy`. | Low | GitHub Pages controls these. `github.io` serves HTTPS, and the page sends no personal data. |
+| No `X-Content-Type-Options` or `Referrer-Policy`. | Low | GitHub Pages controls these. It serves HTTPS and sends HSTS, and the page sends no personal data. |
 | Validation is client-side only. | None in this demo | Nothing is submitted, so there is no server to protect. It would be serious with a real backend. |
 | Dev tooling could be compromised at build time. | Low | Lockfile, `npm ci` in CI and Dependabot reduce this but cannot remove it. |
 | Unrelated query parameters stay in the address bar. | Very low | Only `model` and `finish` are ever read. Others are never parsed or rendered. |

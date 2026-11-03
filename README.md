@@ -2,7 +2,7 @@
 
 A single-page product site for Heliora, a fictional solar panel manufacturer, built with vanilla TypeScript and no production dependencies.
 
-**Live demo:** _add the URL after the first deploy_
+**Live demo:** <https://skaveh0.github.io/heliora/>
 
 **Screenshot:** _add after the first deploy_
 
@@ -131,9 +131,9 @@ In Git Bash on Windows, put `MSYS_NO_PATHCONV=1` before that command, or Git Bas
 
 ### Security headers
 
-GitHub Pages cannot set custom HTTP headers, which is why the Content Security Policy is delivered through a `<meta>` tag. A production host should also send these as headers:
+GitHub Pages cannot set custom HTTP headers, which is why the Content Security Policy is delivered through a `<meta>` tag. A production host should send these as headers:
 
-- `Strict-Transport-Security` (HSTS)
+- `Strict-Transport-Security` (HSTS), which GitHub Pages already sends but another host may not
 - `X-Content-Type-Options`
 - `Referrer-Policy`
 - `Content-Security-Policy` with `frame-ancestors`, which browsers ignore in a `<meta>` tag
