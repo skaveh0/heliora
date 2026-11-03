@@ -2,12 +2,22 @@
 <html lang="en" data-model="HL-550M" data-finish="silver">
   <head>
     <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; form-action 'none'; base-uri 'none'"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Heliora HL Series | Photovoltaic modules for utility and commercial installations</title>
     <meta
       name="description"
       content="High-efficiency photovoltaic modules for utility and commercial installations. Compare the 450 W, 550 W and 650 W bifacial HL modules and estimate annual yield. Fictional brand, demo project."
     />
+    <link rel="canonical" href="https://skaveh0.github.io/heliora/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Heliora" />
+    <meta property="og:title" content="Heliora HL Series" />
+    <meta property="og:description" content="High-efficiency photovoltaic modules for utility and commercial installations. Fictional brand, demo project." />
+    <meta property="og:url" content="https://skaveh0.github.io/heliora/" />
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f3ec" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#12110e" />
@@ -358,7 +368,7 @@
               <div class="field">
                 <label for="yield-modules">Number of modules <span class="field__hint">1–1000</span></label>
                 <input id="yield-modules" name="modules" type="number" inputmode="numeric" min="1" max="1000" step="1" value="100" aria-describedby="yield-modules-error" />
-                <p class="field__error" id="yield-modules-error" hidden></p>
+                <div aria-live="polite"><p class="field__error" id="yield-modules-error" hidden></p></div>
               </div>
               <label class="check">
                 <input type="checkbox" id="yield-tilt" name="tilt" />
@@ -395,10 +405,10 @@
                   <path class="chart__bar" d="M249.5 224V63.9q0-3 3-3h24q3 0 3 3V224z"><title>May: 9,412 kWh</title></path>
                   <path class="chart__bar" d="M298.5 224V53.1q0-3 3-3h24q3 0 3 3V224z"><title>Jun: 10,032 kWh</title></path>
                   <path class="chart__bar" d="M347.5 224V52q0-3 3-3h24q3 0 3 3V224z"><title>Jul: 10,094 kWh</title></path>
-                  <path class="chart__bar" d="M396.5 224V59.100q0-3 3-3h24q3 0 3 3V224z"><title>Aug: 9,684 kWh</title></path>
-                  <path class="chart__bar" d="M445.5 224V80.600q0-3 3-3h24q3 0 3 3V224z"><title>Sep: 8,448 kWh</title></path>
-                  <path class="chart__bar" d="M494.5 224V108.800q0-3 3-3h24q3 0 3 3V224z"><title>Oct: 6,820 kWh</title></path>
-                  <path class="chart__bar" d="M543.5 224V140.100q0-3 3-3h24q3 0 3 3V224z"><title>Nov: 5,016 kWh</title></path>
+                  <path class="chart__bar" d="M396.5 224V59.1q0-3 3-3h24q3 0 3 3V224z"><title>Aug: 9,684 kWh</title></path>
+                  <path class="chart__bar" d="M445.5 224V80.6q0-3 3-3h24q3 0 3 3V224z"><title>Sep: 8,448 kWh</title></path>
+                  <path class="chart__bar" d="M494.5 224V108.8q0-3 3-3h24q3 0 3 3V224z"><title>Oct: 6,820 kWh</title></path>
+                  <path class="chart__bar" d="M543.5 224V140.1q0-3 3-3h24q3 0 3 3V224z"><title>Nov: 5,016 kWh</title></path>
                   <path class="chart__bar" d="M592.5 224V149q0-3 3-3h24q3 0 3 3V224z"><title>Dec: 4,501 kWh</title></path>
                 </g>
                 <text class="chart__peak" id="yield-chart-peak" x="362.5" y="41" text-anchor="middle">10,094</text>
