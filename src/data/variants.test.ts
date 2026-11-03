@@ -6,11 +6,13 @@ const rows = (id: VariantId) =>
   Object.fromEntries(SPEC_ROWS.map((row) => [row.label, row.value(VARIANTS[id])]));
 
 describe('variant data', () => {
-  it.each(VARIANT_IDS)('%s efficiency agrees with its power and area', (id) => {
-    const { ratedPowerW, dimensionsMm, efficiencyPct } = VARIANTS[id];
-    const areaM2 = (dimensionsMm.length * dimensionsMm.width) / 1e6;
-    const derivedPct = ratedPowerW / areaM2 / 10;
-    expect(Math.abs(derivedPct - efficiencyPct)).toBeLessThan(0.1);
+  it('states an efficiency that agrees with each module power and area', () => {
+    for (const id of VARIANT_IDS) {
+      const { ratedPowerW, dimensionsMm, efficiencyPct } = VARIANTS[id];
+      const areaM2 = (dimensionsMm.length * dimensionsMm.width) / 1e6;
+      const derivedPct = ratedPowerW / areaM2 / 10;
+      expect(Math.abs(derivedPct - efficiencyPct), id).toBeLessThan(0.1);
+    }
   });
 
   it('formats specification rows the way the published table shows them', () => {
