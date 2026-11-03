@@ -1,5 +1,7 @@
 # Heliora
 
+Built by [Soroush Kaveh](https://github.com/skaveh0). [Source on GitHub](https://github.com/skaveh0/heliora).
+
 A single-page product site for Heliora, a fictional solar panel manufacturer, built with vanilla TypeScript and no production dependencies.
 
 **Live demo:** <https://skaveh0.github.io/heliora/>
@@ -44,6 +46,7 @@ Everything in `lib/` can be tested directly without a browser or a DOM library. 
 - Dark and light themes that follow the system setting, with a saved override
 - Responsive from 360 px to 1920 px
 - Keyboard accessible, with support for screen readers, reduced motion and forced colours
+- An "About this build" section on the page, covering the stack, tests, Lighthouse scores and build date
 
 ### Calculator assumptions
 
@@ -93,7 +96,8 @@ npm audit
 The test suite covers yield maths, URL parsing, form validation and variant lookup. It includes malicious input such as `?model=<script>alert(1)</script>`, `?finish=javascript:alert(1)` and quantities of `-1`, `1e308` and `abc`. It also checks these security rules, so breaking one fails CI:
 
 - The Content Security Policy is present and comes before any script or stylesheet.
-- The page has no inline scripts, styles or event handlers, and loads nothing from another origin.
+- The page has no executable inline scripts, inline styles or event handlers, and loads nothing from another origin.
+- The JSON-LD block's hash in the Content Security Policy matches its contents.
 - Links that open a new tab set `rel="noopener noreferrer"`.
 - The source uses no HTML-parsing DOM sinks and no dynamic code execution.
 
@@ -137,6 +141,10 @@ GitHub Pages cannot set custom HTTP headers, which is why the Content Security P
 - `X-Content-Type-Options`
 - `Referrer-Policy`
 - `Content-Security-Policy` with `frame-ancestors`, which browsers ignore in a `<meta>` tag
+
+## License
+
+[MIT](LICENSE), covering the code. Heliora itself is a fictional brand.
 
 ## Possible extensions
 

@@ -54,11 +54,15 @@ Reviewed against the production build served by `vite preview`, in Chrome.
 Delivered with `<meta http-equiv>` as the first element after the charset:
 
 ```
-default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; form-action 'none'; base-uri 'none'
+default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-ySThJkFwTCSFjQGrmNtSl0ofmPwJktK5gaFegge4UXI='; form-action 'none'; base-uri 'none'
 ```
 
-- The page has no inline scripts, style attributes, style blocks or inline event handlers (tested).
-  Runtime styling is done with data attributes and classes.
+- The page has no executable inline scripts, style attributes, style blocks or inline event handlers
+  (tested). Runtime styling is done with data attributes and classes.
+- The only inline `<script>` is the JSON-LD metadata block. Browsers do not execute it, and in testing it
+  caused no violation even without an allowance. Its hash is in `script-src` anyway, as an explicit
+  record of the one inline block that is expected. A test fails if the two drift apart. Editing the block
+  means updating the hash.
 - The script that applies a saved theme before first paint is an external file
   (`public/theme-init.js`) because inline scripts are not allowed.
 - A `securitypolicyviolation` listener recorded zero violations on the production build while using the
@@ -84,8 +88,8 @@ default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; f
 
 ### 6. External links
 
-There is one `target="_blank"` link, the GitHub link in the footer, with `rel="noopener noreferrer"`. A test
-enforces this for any link added later. A test also checks that no script, stylesheet, image or iframe
+The two `target="_blank"` links, both in the footer credit, have `rel="noopener noreferrer"`. A test enforces
+this for any link added later. A test also checks that no script, stylesheet, image or iframe
 loads from another origin.
 
 ### 7. Supply chain
@@ -140,7 +144,7 @@ It was removed from the meta tag and moved to the production header list below. 
 **HTTP headers**
 
 ```
-Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'
+Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-ySThJkFwTCSFjQGrmNtSl0ofmPwJktK5gaFegge4UXI='; form-action 'self'; base-uri 'none'; frame-ancestors 'none'
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 X-Content-Type-Options: nosniff
 Referrer-Policy: strict-origin-when-cross-origin
